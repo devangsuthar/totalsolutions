@@ -104,10 +104,19 @@ nav ul li:last-child a:hover{
     background-color: rgb(6 34 53 / 0.65);
 }
 h1{
-    font-size: 3.5em;
+    font-size: 4em;
     font-weight: bold;
 }
-
+h2{
+    font-size: 2.2em;
+    font-weight: bold;
+}
+p{
+    line-height: 1.68em;
+}
+.text-right{
+    text-align: right;
+}
 
 .btn.btn-dark{
     background-color: #000000;
@@ -134,30 +143,28 @@ header.sticky{
 
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: auto;
     overflow: hidden;
 }
 .carousel-item {
-    height: 100vh;
+    height: 75vh;
 }
 .carousel-item img {
     object-fit: cover;
     height: 100%;
 }
-
 .carousel-caption {
     bottom: auto;
-    top: 50%;
+    top: 35%;
     transform: translateY(-50%);
     text-align: left;
     max-width: 900px;
-    left: 10%;
+    padding-left: 12px;
+    padding-right: 12px;
 }
-
 .carousel-caption h1 {
     margin-bottom: 1rem;
 }
-
 .carousel-caption p {
     font-size: 20px;
     margin-bottom: 2rem;
@@ -165,20 +172,48 @@ header.sticky{
     line-height: 1.6em;
     max-width: 700px;
 }
-
 .carousel-indicators {
-    bottom: 50px;
-    gap: 10px;
+    bottom: 180px;
+    gap: 6px;
 }
 .hero-section .slide .carousel-indicators button{
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border: 2px solid #FFFFFF;
     border-radius: 50%;
     background: transparent;
 }
 .hero-section .slide .carousel-indicators button.active{
     background-color: #FFFFFF;
+}
+.filter-section{
+    position: relative;
+}
+.filter-section .inner-container{
+    position: absolute;
+    width: 100%;
+    max-width: 1320px;
+    top: -100px;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.1);
+}
+.filter-section select:focus{
+    box-shadow: none;
+}
+.filter-section select{
+    font-size: 16px;
+    color: #333333;
+    appearance: none;
+    background-image: url(/images/dropdown.svg);
+    background-size: 14px;
+    background-position: right 10px center;
+    cursor: pointer;
+}
+.filter-section select::selection{
+    color: #6a6a6a;
+}
+.btn.submit-btn{
+    background-color: #0096FC;
+    border: 1px solid #0096FC;
 }
 .property-search {
     background-color: white;
@@ -188,6 +223,17 @@ header.sticky{
     margin-top: -100px;
     position: relative;
     z-index: 10;
+}
+.aboutus-section{
+    padding: 160px 0;
+}
+.aboutus-section h4{
+    font-weight: normal;
+    padding: 5px 0 20px;
+}
+.aboutus-section .description p{
+    font-size: 20px;
+    line-height: 1.78em;
 }
 
 @media (max-width: 768px) {
