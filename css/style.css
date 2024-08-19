@@ -72,6 +72,7 @@
 
 body{
     font-family: 'Roboto',sans-serif;
+    overflow-x: hidden;
 }
 nav ul li a.nav-link{
     font-weight: 500;
@@ -108,6 +109,10 @@ h1{
     font-weight: bold;
 }
 h2{
+    font-size: 3em;
+    font-weight: bold;
+}
+h3{
     font-size: 2.2em;
     font-weight: bold;
 }
@@ -116,6 +121,15 @@ p{
 }
 .text-right{
     text-align: right;
+}
+.pr-5{
+    padding-right: 30px;
+}
+.xl-d-none{
+    display: none;
+}
+.xl-d-block{
+    display: block;
 }
 
 .btn.btn-dark{
@@ -137,7 +151,10 @@ header.sticky .navbar-brand{
     transition: 0.28s linear;
 }
 header.sticky{
-    box-shadow: 0px 2px 10px #444444;
+    box-shadow: 0px 2px 10px rgb(68 68 68 / 27%);
+}
+.flex-wrap{
+    flex-wrap: wrap;
 }
 
 
@@ -147,7 +164,7 @@ header.sticky{
     overflow: hidden;
 }
 .carousel-item {
-    height: 75vh;
+    height: 80vh;
 }
 .carousel-item img {
     object-fit: cover;
@@ -192,21 +209,30 @@ header.sticky{
 .filter-section .inner-container{
     position: absolute;
     width: 100%;
-    max-width: 1320px;
+    max-width: 1300px;
     top: -100px;
     box-shadow: 0px 20px 40px rgba(0,0,0,0.1);
+    padding: 40px;
 }
 .filter-section select:focus{
     box-shadow: none;
 }
-.filter-section select{
+.filter-section select,
+.consult-form select{
     font-size: 16px;
     color: #333333;
     appearance: none;
     background-image: url(/images/dropdown.svg);
-    background-size: 14px;
-    background-position: right 10px center;
+    background-size: 12px;
+    background-position: right 6px center;
     cursor: pointer;
+    padding-right: 10px;
+    background-repeat: no-repeat;
+}
+.consult-form select{
+    background-image: url(/images/light-dropdown.svg);
+    color: var(--black);
+    background-size: 12px;
 }
 .filter-section select::selection{
     color: #6a6a6a;
@@ -225,7 +251,7 @@ header.sticky{
     z-index: 10;
 }
 .aboutus-section{
-    padding: 160px 0;
+    padding: 220px 0 120px;
 }
 .aboutus-section h4{
     font-weight: normal;
@@ -235,22 +261,461 @@ header.sticky{
     font-size: 20px;
     line-height: 1.78em;
 }
+.aboutus-section .description{
+    padding-top: 10px;
+}
+.aboutus-section img{
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.07);
+    width: 100%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#submit {
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#submit:hover {
+    background-color: #0077cc;
+}
+.call-cta-section{
+    background-image: url(/images/callback-cta.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    position: relative;
+}
+.call-cta-section::before{
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+}
+.call-cta-section .content > div.col-lg-6{
+    padding-right: 60px;
+}
+div .content{
+    z-index: 99;
+}
+.call-cta-section p{
+    font-size: 22px;
+}
+.consult-form{
+    background-color: #FFFFFF;
+    padding: 40px;
+}
+.consult-form h4{
+    font-size: 24px;
+    font-weight: 400;
+}
+.consult-form p{
+    font-size: 18px;
+    font-weight: 300;
+}
+.consult-form input[type="text"],
+.consult-form input[type="number"], 
+.consult-form select,
+.consult-form input:not([type="checkbox"]){
+    border: 2px solid #DCE0E0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--black);
+    font-weight: 300;
+    min-height: 42px;
+    padding: 8px;
+    width: 100%;
+}
+.consult-form select:focus,
+.consult-form input:focus{
+    outline: none;
+    border-color: var(--theme-color);
+}
+.consult-form label{
+    width: 100%;
+    font-size: 14px;
+}
+.consult-form .form-group{
+    margin-bottom: 10px;
+}
+.consult-form .form-group span{
+    font-size: 14px;
+}
+.choice-section{
+    padding: 85px 0;
+}
+.single-choice h5{
+    max-width: 200px;
+    margin: 0 auto;
+}
+.our-team-section,
+.workwithus-section{
+    background: #F8F8F8;
+    padding: 70px 0 90px;
+}
+.our-team-section p,
+.workwithus-section p,
+.testimonial-section p{
+    color: #7A7A7A;
+    font-size: 16px;
+    line-height: 1.76em;
+    font-weight: 300;
+}
+.our-team-section h4{
+    color: #00AEFF;
+    font-size: 16px;
+    font-weight: 600;
+}
+.our-team-section h5{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.66em;
+}
+.our-team-section .team-member{
+    transition: 0.35s linear;
+    padding-top: 40px !important;
+    height: 100%;
+}
+.our-team-section .team-member:hover{
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.1);
+}
+.logo-slider img{
+    width: 100%;
+    height: 70px;
+    object-fit: contain;    
+}
+.logo-slider .slick-slide{
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 15px;
+}
+.logo-slider .slick-dots {
+    text-align: center;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 0 !important;
+}
+.logo-slider .slick-dots li{
+    display: inline-block;
+    line-height: normal
+}
+.logo-slider .slick-dots li button{
+    text-indent: -9999px;
+    border: 1px solid #CCCCCC;
+    background: transparent;
+    border-radius: 50%;
+    width: 12px;
+    line-height: 12px;
+    height: 14px;
+    margin: 2px 6px;
+}
+.logo-slider .slick-dots li.slick-active button{
+    background-color: #cccccc;
+}
+.testimonial-card {
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+}
+.testimonial-card .card-footer{
+    position: absolute;
+    bottom: -35%;
+    width: 100%;
+    padding: 0;
+}
+.testimonial-section{
+    padding: 100px 0 160px;
+}
+.testimonial-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.star-rating {
+    color: #ffc107;
+}
+.client-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card-footer > div{
+    grid-column-gap: 20px;
+    padding: 0 20px;
+}
+.card-footer img{
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.09);
+}
+.card-footer small{
+    color: #777777;
+    font-size: 14px;
+}
+.testimonial-card .card-body{
+    position: relative;
+}
+.testimonial-card .card-body .card-text{
+    font-size: 14px;
+}
+.testimonial-card .card-body::after{
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    left: 30px;
+    background-color: #FFF;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    box-shadow: 8px 5px 8px rgba(0, 0, 0, 0.1);
+}
+.copyright-info{
+    border-top: 1px solid #494949;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+footer h4{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+footer ul.footer-menu li a{
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+footer ul.footer-menu li a:hover{
+    color: var(--theme-color)!important;
+}
+footer p.footer_description{
+    font-weight: 300;
+    line-height: 1.75em;
+    font-size: 16px;
+}
+ul.social-icons {
+    list-style: none;
+    padding: 0;
+}
+ul.social-icons li{
+    display: inline-block;
+}
+ul.social-icons li a{
+    background-color: var(--theme-color);
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 5px;
+    color: #FFFFFF;
+}
+ul.social-icons li a i.fa{
+    font-size: 20px;
+}
+ul.contact-details{
+    list-style: none;
+    padding: 0;
+}
+ul.contact-details li{
+    font-size: 16px;
+    display: flex;
+    grid-gap: 20px;
+    align-items: flex-start;
+    font-weight: 300;
+    line-height: 1.65em;
+    margin-bottom: 10px;
+}
+footer ul.footer-menu{
+    list-style: none;
+    padding-left: 0;
+}
+.logo {
+    max-width: 200px;
+}
+.menu-list, .contact-list {
+    list-style-type: none;
+    padding: 0;
+}
+.menu-list li, .contact-list li {
+    margin-bottom: 10px;
+}
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 992px ){
+    button.navbar-toggler{
+        padding: 0;
+        border: none;
+        border-radius: 0;
+    }
+    button.navbar-toggler:focus{
+        box-shadow: none;
+    }
+    nav ul li:last-child{
+        margin-left: 0;
+    }
+    nav ul li:last-child a{
+        display: inline-block;
+        width: auto;
+    }
+    header nav{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .carousel-item{
+        height: 50vh;
+    }
+    .workwithus-section{
+        overflow-x: hidden;
+    }
+    .testimonial-section .row .col{
+        padding-bottom: 70px;
+    }
+    .our-team-section, .workwithus-section{
+        padding: 70px 0 80px;
+    }
+    .testimonial-section{
+        padding: 80px 0 100px;
+    }
+    .filter-section .inner-container{
+        position: relative;
+        padding: 20px;
+    }
+    .aboutus-section{
+        padding: 50px 0;
+    }
+    h3{
+        font-size: 1.95em;
+    }   
+    h2{
+        font-size: 2.5em;
+    }
+    .sm-d-none{
+        display: none;
+    }
+    .sm-d-block{
+        display: block;
+    }
+    .logo-slider img{
+        height: 60px;
+    }
+    .logo-slider .slick-slide{
+        padding: 20px;
+    }
+}
 
 @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-section {
+        width: 100%;
+    }
+    .carousel-indicators{
+        bottom: 120px;
+    }
     .carousel-caption {
         max-width: 90%;
-        left: 5%;
+        left: 8%;
+        right: auto;
+        text-align: center;
     }
-
+    header nav.navbar{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .filter-section .inner-container{
+        top: -50px;
+    }
     .carousel-caption h1 {
         font-size: 2rem;
     }
-
     .carousel-caption p {
         font-size: 1rem;
     }
-
+    .carousel-item{
+        height: 80vh;
+    }
+    .carousel-caption p{
+        line-height: 1.78em;
+    }
     .property-search {
         margin-top: -50px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .filter-section .inner-container{
+        width: 95%;
+    }
+    .carousel-caption {
+        left: 6%;
+        right: auto;
+        text-align: center;
+    }
+    .aboutus-section .pr-5{
+        padding-right: 0;
+    }
+    .aboutus-section{
+        padding: 20px 30px 50px 20px;
+    }
+    .call-cta-section,
+    .choice-section{
+        padding: 70px 10px;
+    }
+    .call-cta-section .content > div.col-lg-6{
+        padding-right: 0;
+    }
+    .consult-form{
+        padding: 20px;
+    }
+    .choice-section .mb-5{
+        margin-bottom: 15px!important;
+    }
+    .choice-section .single-choice{
+        padding-bottom: 20px!important;
+    }
+    .our-team-section, .workwithus-section{
+        padding: 70px 10px;
+    }
+    footer .row div{
+        padding-left: 20px!important;
+        padding-right: 20px!important;
+    }
+    .footer-menu li{
+        padding: 4px 0;
     }
 }

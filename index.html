@@ -6,7 +6,9 @@
     <title>Total Solutions Advisory</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/slick.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -22,10 +24,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav gap-4 ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link px-4" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link px-4" href="#contact-us">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +35,7 @@
     </header>   
 
     <div class="wrapper">
-        <div class="hero-section">
+        <section class="hero-section" id="home">
             <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -79,14 +81,14 @@
                 <!-- Add more indicators as needed -->
             </div>
             </div>
-        </div>
+        </section>
 
-        <div class="filter-section">
+        <section class="filter-section">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 bg-white inner-container px-5 py-4 rounded-2">
+                    <div class="col-12 bg-white inner-container rounded-2">
                         <form class="form-container">
-                            <div class="row g-1 justify-content-between">
+                            <div class="row g-2">
                                 <div class="col-lg-2 col-md-4 col-sm-6">
                                     <label for="iwantto" class="form-label fw-semibold">I want to</label>
                                     <select id="iwantto" class="form-select rounded-0">
@@ -149,27 +151,335 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="aboutus-section">
+        <section class="aboutus-section" id="about-us">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 d-flex">
-                        <div class="col-lg-6 col-xs-12">
-                            <h2>About Total Solutions Advisory</h2>
+                    <div class="col-12 d-flex flex-wrap">
+                        <div class="col-lg-6 pr-5 col-xs-12">
+                            <h3>About Total Solutions Advisory</h3>
                             <h4>We are a leading consultancy in Real Estate World </h4>
+                            <div class="xl-d-none sm-d-block my-4">
+                                <img src="/images/about-us.jpg" alt="about-us">
+                            </div>
                             <div class="description">
                                 <p>We are a dedicated property advisory service, assisting our clients with the BUY / SELL / RENT / LEASE And INVEST in properties that suit their specific needs. We are partnered with all the top and most reputable builders across Ahmedabad.</p>
-                                <p>The rapid growth of the real estate industry is promising for both developers and buyers. With a diverse array of properties now available, even the most specific requirements can be met. However, this accelerated expansion has also increased the complexities in property transactions. While buyers have more choices than ever, they often face uncertainty about whom to trust.</p>
+                                <p>The rapid growth of the real estate industry is promising for both developers and buyers. With a diverse array of properties now available, even the most specific requirements can be met. However, this accelerated expansion has also increased the complexities in property transactions. While buyers have more choices than ever, they often face uncertainty about whom to trust.</p>
                         </div>
                         </div>
-                        <div class="col-lg-6 col-xs-12 text-right">
-                            <img src="/images/about-us.png" alt="about-us">
+                        <div class="col-lg-6 col-xs-12 sm-d-none xl-d-block text-right">
+                            <img src="/images/about-us.jpg" alt="about-us">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <section class="call-cta-section" id="contact-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 content gap-4 justify-content-between align-items-center flex-wrap d-flex">
+                        <div class="col-lg-6 text-white col-sm-12 col-xs-12">
+                            <h2 class="pb-4">Request a call back</h2>
+                            <p>We're excited to hear from you and discuss your project. Our team is committed to understanding your needs and providing tailored solutions. 
+                                Reach out to us with any questions, and we'll respond promptly to assist you and guide you every step of the way.</p>
+                        </div>
+                        <div class="consult-form col-lg-5 col-sm-12 col-xs-12">
+                            <h4>Property Consultation Form</h4>
+                            <p>Submit your detailed property requirement request to us.</p>
+                            <form id="propertyForm">
+                                <div class="form-group">
+                                    <label class="form-label fw-semibold" for="inquiryType">Inquiry Type</label>
+                                    <select id="inquiryType" required>
+                                        <option value="">Select</option>
+                                        <option value="buy">Buy</option>
+                                        <option value="sell">Sell</option>
+                                        <option value="rent">Rent</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label fw-semibold" for="userType">Information</label>
+                                    <div class="w-100 pb-2">
+                                        <select id="userType" required>
+                                            <option value="">I'm a</option>
+                                            <option value="buyer">Buyer</option>
+                                            <option value="seller">Seller</option>
+                                            <option value="agent">Agent</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-100 d-flex pb-2 gap-2">
+                                        <input type="text" id="firstName" placeholder="First Name" required>
+                                        <input type="text" id="lastName" placeholder="Last Name" required>
+                                    </div>
+                                    <div class="w-100">
+                                        <input type="email" id="email" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label fw-semibold" for="location">Location</label>
+                                    <div class="w-100 d-flex gap-2">
+                                        <select id="location" required>
+                                            <option value="">Select</option>
+                                            <option value="city1">City 1</option>
+                                            <option value="city2">City 2</option>
+                                        </select>
+                                        <input type="text" id="zipCode" placeholder="Zip Code" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label fw-semibold" for="propertyType">Property</label>
+                                    <div class="w-100 pb-2">
+                                        <select id="propertyType" required>
+                                            <option value="">Select type</option>
+                                            <option value="house">House</option>
+                                            <option value="apartment">Apartment</option>
+                                            <option value="condo">Condo</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-100 d-flex pb-2 gap-2">
+                                        <input type="number" id="maxPrice" placeholder="Max price" required>
+                                        <input type="number" id="minSize" placeholder="Minimum size (Sq Ft)" required>
+                                    </div>
+                                    <div class="w-100 d-flex gap-2">
+                                        <input type="number" id="beds" placeholder="Number of beds" required>
+                                        <input type="number" id="baths" placeholder="Number of baths" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label fw-semibold">GDPR Agreement</label>
+                                    <div class="w-100 d-flex gap-2">
+                                        <input type="checkbox" id="gdprAgreement" required>
+                                        <span>I agree to have this website store the information I've provided.</span>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="g-recaptcha mt-4 mb-2" data-sitekey="YOUR_SITE_KEY">
+                                    <img src="/images/recaptcha.svg" alt="recaptcha">
+                                </div>
+
+                                <button type="submit" id="submit">Submit</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="choice-section" id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-5 pb-2 text-center">
+                        <h3>What Makes Us the Preferred Choice</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 single-choice col-md-6 py-2 col-xs-12 text-center">
+                            <img src="/images/processing.svg" alt="processing">
+                            <h5 class="pt-4 fw-bold">Smooth Processing</h5>
+                        </div>
+                        <div class="col-lg-3 single-choice col-md-6 py-2 col-xs-12 text-center">
+                            <img src="/images/service.svg" alt="service">
+                            <h5 class="pt-4 fw-bold">End to End Service</h5>
+                        </div>
+                        <div class="col-lg-3 single-choice col-md-6 py-2 col-xs-12 text-center">
+                            <img src="/images/guidance.svg" alt="guidance">
+                            <h5 class="pt-4 fw-bold">Expert Guidance</h5>
+                        </div>
+                        <div class="col-lg-3 single-choice col-md-6 py-2 col-xs-12 text-center">
+                            <img src="/images/guarantee.svg" alt="guarantee">
+                            <h5 class="pt-4 fw-bold">100% Satisfaction Guarantee</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-team-section" id="our-team">
+            <div class="container">
+                <div class="col-12 text-center">
+                    <h3>Meet Our Team</h3>
+                    <p>We have the best professionals in real estate for all your property service needs.</p>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-0">
+                    <div class="col">
+                        <div class="bg-white p-4 text-center team-member">
+                            <img src="/images/avtar-1.svg" alt="avatar" class="mb-4">
+                            <h4>Milan Bhai</h4>
+                            <h5 class="mb-3">Company Agent , Total Solutions Advisory</h5>
+                            <p>Total Solutions Advisory is a real estate property management company that has been providing exceptional services.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-white p-4 text-center team-member">
+                            <img src="/images/avtar-2.svg" alt="avatar" class="mb-4">
+                            <h4>Dhaval Trivedi</h4>
+                            <h5 class="mb-3">Company Agent , Total Solutions Advisory</h5>
+                            <p>Total Solutions Advisory is a real estate property management company that has been providing exceptional services.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-white p-4 text-center team-member">
+                            <img src="/images/avtar-3.svg" alt="avatar" class="mb-4">
+                            <h4>Vachika</h4>
+                            <h5 class="mb-3">Company Agent , Total Solutions Advisory</h5>
+                            <p>Total Solutions Advisory is a real estate property management company that has been providing exceptional services that has been providing exceptional services.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-white p-4 text-center team-member">
+                            <img src="/images/avtar-2.svg" alt="avatar" class="mb-4">
+                            <h4>Vachika</h4>
+                            <h5 class="mb-3">Company Agent , Total Solutions Advisory</h5>
+                            <p>Total Solutions Advisory is a real estate property management company that has been providing exceptional services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workwithus-section bg-white" id="work-with-us">
+            <dov class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Work With Us!</h3>
+                        <p>Collaborate with Us for Exceptional Real Estate Results!</p>
+                    </div>
+                    <div class="logo-slider">
+                        <div class="slide">
+                            <img src="images/logo-1.svg" alt="logo-1">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-2.svg" alt="logo-2">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-3.svg" alt="logo-3">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-4.svg" alt="logo4">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-5.svg" alt="logo-5">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-6.svg" alt="logo-6">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-7.svg" alt="logo-7">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-8.svg" alt="logo-8">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-4.svg" alt="logo-4">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-3.svg" alt="logo-3">
+                        </div>
+                        <div class="slide">
+                            <img src="images/logo-5.svg" alt="logo-5">
+                        </div>  
+                    </div>
+                </div>
+            </dov>
+        </section>
+
+        <section class="testimonial-section px-2 bg-light" id="testimonials">
+            <div class="container-fluid px-4">
+                <h3 class="text-center mb-2">Clients Testimonials</h3>
+                <p class="text-center mb-5">Our clients consistently depart with a smile and high satisfaction after experiencing our services.</p>
+                
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+                    <!-- Testimonial 1 -->
+                    <div class="col">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="star-rating mb-2">
+                                    ★★★★★
+                                </div>
+                                <p class="card-text">Mr. Milan's expertise in the real estate market was evident from our first meeting. He was very professional and provided a detailed explanation of the project along with his associate, helping me understand the best time and rate to buy/ invest. Happy with the services and response time of the team.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/testimonial-1.jfif" alt="Yogesh Raykangor" class="client-image ">
+                                    <div>
+                                        <h6 class="mb-0">Yogesh Raykangor</h6>
+                                        <small class="text-muted">Protech IT Services</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Testimonial 2 -->
+                    <div class="col">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="star-rating mb-2">
+                                    ★★★★★
+                                </div>
+                                <p class="card-text">I had an excellent experience with Total Solutions Advisory. They are a company with impeccable commitment and high deliverables. They would be prompt in reaching out to you understand your requirement and provide you numbers commercially viable solutions. I wish them all the very best for their future endeavors.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/testimonial-2.jfif" alt="Anil Singh" class="client-image ">
+                                    <div>
+                                        <h6 class="mb-0">Anil Singh</h6>
+                                        <small class="text-muted">Associate Director - SSIPL</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Testimonial 3 -->
+                    <div class="col">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="star-rating mb-2">
+                                    ★★★★★
+                                </div>
+                                <p class="card-text">Highly recommend to people looking for homes. Vachika madam has been in my contact since first day and has been very helpful Kiran bhai has always available for visits on just one call Dhaval Trivedi has been very understanding and co-operative always Just wanted to say thank you for your services and hard work!</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/testimonial-3.jfif" alt="Kirti Bhatter" class="client-image ">
+                                    <div>
+                                        <h6 class="mb-0">Kirti Bhatter</h6>
+                                        <small class="text-muted">Head of operations, Brahmani events</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Testimonial 4 -->
+                    <div class="col">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="star-rating mb-2">
+                                    ★★★★★
+                                </div>
+                                <p class="card-text">I wanted to take a moment to express my heartfelt gratitude for the exceptional service provided by TOTAL SOLUTIONS ADVISORY during my recent apartment purchase. The vast knowledge of the real estate market and the local area was very much evident as they offered various suitable options matching the criteria.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/testimonial-4.jfif" alt="Nikhil Satwani" class="client-image ">
+                                    <div>
+                                        <h6 class="mb-0">Nikhil Satwani</h6>
+                                        <small class="text-muted">EAM- Sales & Marketing grand Hyat Dubai</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
       
@@ -177,27 +487,54 @@
 
     <!-- Add more sections here -->
 
-    <footer class="bg-dark text-light">
+    <footer class="py-5 pb-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h5>About Us</h5>
-                    <p>Total Solutions Advisory is a leading consultancy in Real Estate World...</p>
+                <div class="col-lg-4 text-center mb-4">
+                    <a href="#" class="d-inline-block mt-3 mb-3"><img src="/images/footer-logo.svg" alt="Total Solutions Advisory" class="footer-logo mb-3"></a>
+                    <ul class="social-icons">
+                        <li><a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contact Details</h5>
-                    <p>Email: info@totalsolutionsadvisory.com<br>Phone: +91 XXXX XXXXXX</p>
+                <div class="col-lg-2 mb-4">
+                    <h4>Menu</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#about-us" class="text-white">About Us</a></li>
+                        <li><a href="#services" class="text-white">Services</a></li>
+                        <li><a href="#our-team" class="text-white">Our Team</a></li>
+                        <li><a href="#work-with-us" class="text-white">Work With Us!</a></li>
+                        <li><a href="#contact-us" class="text-white">Contact Us</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <!-- Add social media icons here -->
+                <div class="col-lg-3 mb-4">
+                    <h4>About Us</h4>
+                    <p class="footer_description">Buy, Sell & Rent - Lease Real Estate Property in Ahmedabad Residential Apartment, Independent House / Villa, Residential / Agriculture Land, Commercial Office / Space.</p>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h4>Contact Details</h4>
+                    <ul class="contact-details">
+                        <li><i class="fa fa-map-marker mt-1"></i> <span> IPSUM DOLER SIT , NR, Pakwan Cir, Bodakdev, Ahmedabad, Gujarat 380054 </span></li>
+                        <li><i class="fa fa-phone mt-1"></i>+91-12345 45689<br>
+                            +91-98765 45321<br>
+                            +91-74551 12358</li>
+                        <li><i class="fa fa-envelope-o mt-1"></i>totalsolutionsadvisory@gmail.com</li>
+                    </ul>
                 </div>
             </div>
+        </div>
+        <div class="text-center copyright-info pt-3 px-4">
+            <small>Copyright © 2024 totalsolutionsadvisory.com. All Rights Reserved.</small>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
